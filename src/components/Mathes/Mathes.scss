@@ -1,0 +1,15 @@
+.event {
+  @apply my-5 py-3 pl-5 pr-10 bg-gradient-to-br from-slate-800 to-sky-600;
+  &__title {
+    @apply flex flex-row items-center text-xl font-bold text-gray-100;
+  }
+  &__item {
+    @apply my-5 flex flex-row items-center justify-between text-xl font-semibold text-gray-100;
+    img {
+      @apply w-10 h-10;
+    }
+  }
+  &__team {
+    @apply md:w-40 flex flex-row justify-between;
+  }
+}

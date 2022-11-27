@@ -1,0 +1,39 @@
+.custom-select {
+  &__control {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    &--menu-is-open {
+      border-color: blueviolet !important;
+    }
+  }
+
+  &__single-value {
+    margin-bottom: -2px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: rgb(80, 80, 80) !important;
+  }
+
+  &__indicator-separator {
+    display: none !important;
+  }
+
+  &__menu {
+    background: linear-gradient(90deg, #1e3a8a, #0ea5e9) !important;
+  }
+
+  &__option {
+    cursor: pointer;
+    &--is-focused {
+      background: linear-gradient(90deg, rgba(68, 0, 255, 1), rgba(9, 9, 121, 1)) !important;
+    }
+    &--is-selected {
+      background: linear-gradient(90deg, rgb(90, 0, 192), rgb(4, 4, 65)) !important;
+    }
+  }
+}
