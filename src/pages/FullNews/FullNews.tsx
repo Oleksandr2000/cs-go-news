@@ -53,18 +53,18 @@ const FullNews = () => {
 
   return (
     <div className='flex flex-row'>
-      <div className='w-full lg:w-2/3 my-10 '>
+      <div className='w-full lg:w-2/3'>
         <div className={styles.article}>
           <div className={styles.head}>
-            <div className='w-3/4'>
+            <div className='w-full md:w-3/4'>
               <img
                 src={`	${process.env.REACT_APP_BASE_IMG_URL}/${article?.image}`}
                 alt={article?.title}
                 className='md:h-96'
               />
             </div>
-            <div className='w-1/4 h-96 pl-5 flex flex-col justify-between'>
-              <div>
+            <div className='w-full md:w-1/4 md:h-96 md:pl-5 flex flex-row md:flex-col justify-between items-center'>
+              <div className='w-full flex flex-row justify-between  md:flex-col py-3 md:py-0 border-b border-b-gray-300 md:border-none'>
                 <div className={styles.author}>{article?.author.username}</div>
                 <div className={styles.relative}>
                   <span>{article?.views}</span>
@@ -74,12 +74,12 @@ const FullNews = () => {
                   <span>0</span>
                   <img src='/comments.png' alt='comments' className='h-4 w-4 ml-2' />
                 </div>
-                <div className='pb-3 border-b border-gray-300 text-blue-500 text-center'>
+                <div className='md:pb-3 md:border-b md:border-gray-300 text-sm text-blue-500 text-center'>
                   {article && `${toTime(article.publishAt)} ${toDate(article.publishAt)}`}
                 </div>
               </div>
-              <div>
-                <div className='flex flex-row justify-around items-end'>
+              <div className='hidden md:block'>
+                <div className='w-full flex flex-row justify-around items-end'>
                   <div className={styles.rating}>
                     <div className='text-md font-medium text-green-700'>1</div>
                     <div className='py-5 border-b-2 border-b-green-700'>
@@ -96,7 +96,9 @@ const FullNews = () => {
               </div>
             </div>
           </div>
-          <h1 className='py-8 text-3xl font-bold text-slate-700'>{article?.title}</h1>
+          <h1 className='py-4 md:py-8 text-xl md:text-3xl text-center md:text-left font-bold text-slate-700'>
+            {article?.title}
+          </h1>
           <div className='pb-5 flex flex-row flex-wrap'>
             {article?.tags &&
               article?.tags.map((tag: newsTags) => (
@@ -194,7 +196,7 @@ const FullNews = () => {
             </div>
           </div>
         </div>
-        <div className='my-10 grid overflow-hidden grid-cols-2 grid-rows-1 gap-5 '>
+        <div className='my-10 grid overflow-hidden grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 gap-3 md:gap-5 '>
           {neighbor.prev && (
             <Neighbor
               title={neighbor.prev.title}
