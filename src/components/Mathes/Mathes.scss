@@ -1,15 +1,58 @@
 .event {
-  @apply my-5 py-3 pl-5 pr-10 bg-gradient-to-br from-slate-800 to-sky-600;
+  @apply my-5 py-3 p-3 md:pl-5 md:pr-10 bg-gradient-to-br from-slate-800 to-sky-600;
   &__title {
-    @apply flex flex-row items-center text-xl font-bold text-gray-100;
+    @apply flex flex-row items-center text-base font-bold text-gray-100;
   }
   &__item {
-    @apply my-5 flex flex-row items-center justify-between text-xl font-semibold text-gray-100;
+    @apply my-5 p-1 text-base font-semibold text-gray-100 bg-gradient-to-r from-slate-900 to-blue-800 md:bg-none shadow-lg shadow-slate-800 md:shadow-none;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+      " .   type . "
+      "home time away"
+      "home time away"
+      " .   date . ";
+
     img {
-      @apply w-10 h-10;
+      @apply w-6 md:w-10 h-6 md:h-10;
     }
   }
   &__team {
-    @apply md:w-40 flex flex-row justify-between;
+    @apply mx-auto flex flex-col md:flex-row items-center justify-center md:justify-around;
+    &-home {
+      @apply flex-col-reverse md:flex-row;
+      grid-area: home;
+    }
+    &-away {
+      grid-area: away;
+    }
+
+    @apply md:w-40;
+  }
+
+  &__time {
+    @apply flex items-center justify-center text-gray-300;
+    grid-area: time;
+  }
+
+  &__type {
+    @apply text-center text-gray-500 md:text-gray-800;
+    grid-area: type;
+  }
+
+  &__date {
+    @apply text-center text-gray-500 md:text-gray-800;
+    grid-area: date;
+  }
+}
+
+@media (min-width: 768px) {
+  .event {
+    &__item {
+      @apply my-5 p-1 text-base font-semibold text-gray-100 bg-gradient-to-r from-slate-900 to-blue-800 md:bg-none shadow-lg shadow-slate-800 md:shadow-none;
+      display: grid;
+      grid-template-columns: auto 1fr auto 1fr auto;
+      grid-template-areas: " date home time away type";
+    }
   }
 }

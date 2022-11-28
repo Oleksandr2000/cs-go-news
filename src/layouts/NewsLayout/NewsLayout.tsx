@@ -17,7 +17,7 @@ const NewsLayout = () => {
   };
 
   return (
-    <div className='w-full mt-5 px-5 py-2 bg-gray-100'>
+    <div className='w-full my-10 px-5 py-2 bg-gray-200 shadow-xl shadow-gray-400'>
       <NewsControl />
       {data.map((item: News, index: number, array: News[]) => {
         return (

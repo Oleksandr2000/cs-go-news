@@ -15,17 +15,17 @@ const Mathes = ({ data, event_logo, event_title }: MathesProps) => {
       </div>
       {data.list.map((item: any) => (
         <div key={item._id} className='event__item'>
-          <div className='text-gray-800'>{toDate(item.start_date)}</div>
-          <div className='event__team'>
-            <div>{item.home_team_name}</div>
+          <div className='event__date text-gray-800'>{toDate(item.start_date)}</div>
+          <div className='event__team event__team-home'>
+            <div className='event__team__name-home'>{item.home_team_name}</div>
             <img src={`https://egw.news${item.home_team_logo}`} alt={item.home_team_name} />
           </div>
-          <div className='text-gray-700'>{String(toTime(item.start_date))}</div>
-          <div className='event__team'>
+          <div className='event__time'>{String(toTime(item.start_date))}</div>
+          <div className='event__team event__team-away'>
             <img src={`https://egw.news${item.away_team_logo}`} alt={item.away_team_name} />
-            <div>{item.away_team_name}</div>
+            <div className='event__team__name-away'>{item.away_team_name}</div>
           </div>
-          <div className='text-gray-800'>{item.best_type}</div>
+          <div className='event__type'>{item.best_type}</div>
         </div>
       ))}
     </div>
