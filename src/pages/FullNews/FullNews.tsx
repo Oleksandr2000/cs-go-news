@@ -35,7 +35,7 @@ const FullNews = () => {
 
   React.useEffect(() => {
     dispatch(fetchOneNews({ slug: String(`${newsNumber}/${slug}`), lang }));
-  }, [newsNumber]);
+  }, [slug]);
 
   React.useEffect(() => {
     if (loadingArticle === "loaded") {
