@@ -16,4 +16,8 @@ export const routes: RouteInterface[] = [
     path: `${FULLNEWS_ROUTE}/:newsNumber/:slug`,
     element: FullNews,
   },
+  {
+    path: `${FULLNEWS_ROUTE}/:slug`,
+    element: FullNews,
+  },
 ];
