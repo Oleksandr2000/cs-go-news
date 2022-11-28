@@ -36,42 +36,7 @@
     padding-left: 40px;
     border-left: 12px solid #0292c4;
   }
-  table {
-    text-align: center;
-    width: 100%;
-    display: table;
-    box-sizing: border-box;
-    border-collapse: separate;
-    border-spacing: 0;
-    text-indent: initial;
-    border: grey;
-  }
-  thead {
-    display: table-header-group;
-    vertical-align: middle;
-    border-color: inherit;
-    border-spacing: 0;
-    width: 100%;
-    border-collapse: separate;
-    text-indent: initial;
-  }
-  tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-  }
-  tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-  }
-  th {
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: bold;
-    padding: 10px;
-    border-right: 2px solid gray;
-  }
+
   h2 {
     color: #53687c;
     font-size: 24px;
@@ -96,6 +61,35 @@
   img {
     width: 100% !important;
   }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  display: table-header-group;
+  border-spacing: 0;
+  width: 100%;
+  border-collapse: separate;
+  text-indent: initial;
+  border: 1px solid lightslategray;
+}
+tbody {
+  display: table-row-group;
+  border: 1px solid lightslategray;
+}
+tr {
+  display: table-row;
+  border: 1px solid lightslategray;
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid lightslategray;
 }
 
 .article {
