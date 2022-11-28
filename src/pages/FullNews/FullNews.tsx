@@ -58,7 +58,7 @@ const FullNews = () => {
           <div className={styles.head}>
             <div className='w-full md:w-3/4'>
               <img
-                src={`	${process.env.REACT_APP_BASE_IMG_URL}/${article?.image}`}
+                src={`${process.env.REACT_APP_BASE_IMG_URL}${article?.image}`}
                 alt={article?.title}
                 className='md:h-96'
               />
